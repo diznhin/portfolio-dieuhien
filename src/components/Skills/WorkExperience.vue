@@ -22,7 +22,7 @@
               <i class="bi bi-geo-alt me-2"></i>{{ exp.location }}
             </p>
 
-            <ul>
+            <ul class="responsibilities">
               <li
                 v-for="r in exp.responsibilities"
                 :key="r"
@@ -63,4 +63,7 @@ defineProps<{
   experiences: Experience[]
 }>()
 </script>
+
+
+
 

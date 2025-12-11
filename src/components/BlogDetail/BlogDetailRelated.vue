@@ -9,7 +9,7 @@
             <h6 class="card-title">{{ relatedPost.title }}</h6>
             <p class="card-text small">{{ relatedPost.excerpt }}</p>
             <router-link :to="'/blog/' + relatedPost.id" class="btn btn-outline-green btn-sm">
-              Read More
+              Đọc thêm
             </router-link>
           </div>
         </div>

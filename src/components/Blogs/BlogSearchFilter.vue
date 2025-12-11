@@ -7,7 +7,7 @@
             <input 
               type="text" 
               class="form-control" 
-              placeholder="Search articles..."
+              placeholder="Tìm kiếm nội dung…"
               v-model="modelSearch"
               @input="$emit('filter')"
             >
@@ -19,7 +19,6 @@
 
         <div class="col-md-6 mb-3">
           <select class="form-select" v-model="modelCategory" @change="$emit('filter')">
-            <option value="">All Categories</option>
             <option 
               v-for="category in categories"
               :key="category"

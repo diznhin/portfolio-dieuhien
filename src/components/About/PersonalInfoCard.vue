@@ -2,7 +2,7 @@
   <div class="card h-100">
     <div class="card-body">
       <h5 class="fw-bold mb-3">Thông tin cá nhân</h5>
-      <img :src="avatar" alt="Profile" class="img-fluid rounded mb-3" />
+      <img :src="avatar" alt="Profile" class="profile-avatar img-fluid mb-3" />
       <ul class="list-unstyled small">
         <li><strong>Họ và tên:</strong> {{ name }}</li>
         <li><strong>Tuổi:</strong> {{ age }}</li>
@@ -26,3 +26,5 @@ defineProps<{
   languages: string;
 }>();
 </script>
+
+

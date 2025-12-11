@@ -4,10 +4,10 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb justify-content-center">
           <li class="breadcrumb-item">
-            <router-link to="/" class="text-decoration-none">Home</router-link>
+            <router-link to="/" class="text-decoration-none">Trang chủ</router-link>
           </li>
           <li class="breadcrumb-item">
-            <router-link to="/blog" class="text-decoration-none">Blog</router-link>
+            <router-link to="/blog" class="text-decoration-none">Bài viết</router-link>
           </li>
           <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
         </ol>

@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import avatar from '../assets/imgs/2.png'
+import vue3 from '../assets/imgs/vue3.webp'
+import tj from '../assets/imgs/tj.png'
 import PersonalInfoCard from '../components/About/PersonalInfoCard.vue'
 import AboutCard from '../components/About/AboutCard.vue'
 import EducationSection from '../components/Skills/EducationSection.vue'
@@ -9,32 +11,30 @@ import TechnicalSkills from '../components/Skills/TechnicalSkills.vue'
 import BlogCard from '../components/Blogs/BlogCard.vue'
 
 const aboutParagraphs = [
-  'Sinh viên năm cuối chuyên ngành Web Development, tập trung vào Vue.js và UI/UX.',
-  'Yêu thích xây dựng giao diện trực quan, tối ưu hiệu năng và trải nghiệm người dùng.',
-  'Thực hành dự án nhỏ, viết blog kỹ thuật và làm freelance front-end.'
-]
+  "Tôi là một lập trình viên Front-end với kinh nghiệm xây dựng giao diện web hiện đại bằng Vue.js, HTML/CSS và Bootstrap. Tôi có khả năng chuyển đổi ý tưởng thiết kế thành sản phẩm giao diện hoàn chỉnh, tối ưu về bố cục, tốc độ và khả năng tương tác. Tôi yêu thích việc tạo ra UI trực quan, tinh gọn và đem lại trải nghiệm tự nhiên cho người dùng. Bên cạnh đó, tôi luôn chủ động cập nhật công nghệ mới, rèn luyện kỹ năng qua các dự án thực tế như portfolio cá nhân, blog, website thử nghiệm và các bài thi giao diện để nâng cao tư duy thiết kế và khả năng lập trình."
+];
 
-const aboutSkills = ['Vue.js', 'TypeScript', 'Bootstrap', 'Tailwind', 'REST API', 'Figma']
+const skills = ["Phát triển Web","Thiết kế UI/UX","Lập trình hướng đối tượng","Quản lý dự án / blog cá nhân","Kỹ năng mềm"];
 
 const education = ref([
   {
-    id: 1,
-    degree: "Cử nhân Công nghệ Thông tin",
-    institution: "Đại Học CNTT – UIT",
-    period: "2021 – 2025",
-    location: "TP. Hồ Chí Minh",
-    description: "Tập trung vào phát triển web, UI/UX và lập trình hiện đại.",
-    achievements: ["GPA 3.5+", "Tham gia CLB lập trình", "Học bổng 2023"]
-  },
-  {
-    id: 2,
-    degree: "Frontend Development Certificate",
-    institution: "F8 Fullstack",
-    period: "2023",
-    location: "Online",
-    description: "Học HTML, CSS, JavaScript và Vue.js.",
-    achievements: ["Hoàn thành 100+ giờ thực hành"]
-  }
+      id: 1,
+      degree: "Tốt nghiệp THPT",
+      institution: "THPT Phước Vĩnh",
+      period: "2022 – 2024",
+      location: "TP. Hồ Chí Minh",
+      description: "Tốt nghiệp THPT với điểm trung bình 8.0",
+      achievements: ["Điểm trung bình 8.0"]
+    },
+    {
+      id: 2,
+      degree: "Cao Đẳng FPT",
+      institution: "FPT Polytechnic",
+      period: "2024 – 2026",
+      location: "TP. Đà Nẵng",
+      description: "Tập trung vào phát triển web, UI/UX và lập trình hiện đại.",
+      achievements: ["GPA 3.5+", "Tham gia CLB lập trình"]
+    }
 ])
 
 const workExperience = ref([
@@ -42,27 +42,27 @@ const workExperience = ref([
     id: 1,
     position: "Front-end Intern",
     company: "ABC Corp",
-    period: "06/2024 – 09/2024",
-    location: "TP. Hồ Chí Minh",
+    period: "06/2025 – 09/2025",
+    location: "TP. Đà Nẵng",
     responsibilities: [
-      "Tham gia phát triển giao diện cho hệ thống quản lý nội bộ.",
-      "Phối hợp với backend để tích hợp API.",
-      "Tối ưu UI/UX trên mobile và desktop."
+      "Hỗ trợ làm giao diện cho một số tính năng nhỏ.",
+      "Lấy và hiển thị dữ liệu từ API theo hướng dẫn.",
+      "Chỉnh sửa giao diện để phù hợp trên mobile."
     ],
-    technologies: ["Vue.js", "TypeScript", "Bootstrap", "REST API"]
+    technologies: ["Vue.js", "TypeScript"]
   },
   {
     id: 2,
     position: "Freelance Front-end Developer",
-    company: "Tự do",
-    period: "2023 – Nay",
-    location: "Remote",
+    company: "Tự do ",
+    period: "2025 – Nay",
+    location: "TP. Đà Nẵng",
     responsibilities: [
-      "Xây dựng landing page cho khách hàng nhỏ lẻ.",
-      "Tư vấn cấu trúc giao diện và trải nghiệm người dùng.",
-      "Triển khai website tĩnh lên hosting / Vercel."
+      "Làm các trang web đơn giản cho khách hàng.",
+      "Sắp xếp bố cục và chỉnh sửa giao diện cơ bản.",
+      "Đưa website lên hosting."
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "Vue", "Git"]
+    technologies: ["HTML", "CSS", "JavaScript"]
   }
 ])
 
@@ -85,25 +85,25 @@ const softSkills = ref([
 const blogPosts = ref([
   {
     id: 1,
-    title: 'Vue 3 Composition API Guide',
-    excerpt: 'Learn how to use Vue 3 Composition API effectively',
-    content: 'Full content here...',
+    title: 'Hướng dẫn Vue 3 Composition API',
+    excerpt: 'Tìm hiểu cách dùng Composition API trong Vue 3',
+    content: 'Nội dung đầy đủ...',
     category: 'Vue.js',
-    date: '2024-01-15',
-    author: 'John Doe',
-    image: '/api/placeholder/400/250',
+    date: '2024-01-15',      
+    author:'Evan You', 
+    image: vue3,
     readTime: 5,
     views: 1234
   },
   {
     id: 2,
-    title: 'TypeScript Best Practices',
-    excerpt: 'Essential TypeScript patterns for modern development',
-    content: 'Full content here...',
+    title: 'Các nguyên tắc TypeScript cơ bản',
+    excerpt: 'Những cách viết TypeScript hiệu quả cho dự án',
+    content: 'Nội dung đầy đủ...',
     category: 'TypeScript',
     date: '2024-01-10',
-    author: 'Jane Smith',
-    image: '/api/placeholder/400/250',
+    author: 'Jane Smith', 
+    image: tj,
     readTime: 8,
     views: 987
   }
@@ -153,19 +153,19 @@ const blogPosts = ref([
         <div class="row">
           <div class="col-md-4 mb-4">
             <PersonalInfoCard
-              avatar="https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/547184727_122284576856011492_1123146261134047823_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG4fUIDEPJaB1G7w1NOn22mJ9nbgZ_d6Gsn2duBn93oa6bXE-qNyQQGCK6q0MTa2Upq21wFzCqv4agCfWIcr02v&_nc_ohc=GGsGS5keU8kQ7kNvwGqB2KP&_nc_oc=AdkFxZlI7yruudCH9e7FpW9bIm-V80D2u4YvAlG3WrbeMwzJBpGcoX1XW-wWnUzMEmg&_nc_zt=23&_nc_ht=scontent.fdad2-1.fna&_nc_gid=RZ6CP-WUlECimLajNhV9Hg&oh=00_Afis_DE8J97leP77bsfXTIFn8T8IgHaOhUZ1O-N_eY3IwQ&oe=6927635F/300x300"
-              name="Diệu Hiền"
+            :avatar="avatar"
+              name="Nguyễn Bích Diệu Hiền"
               :age="19"
               address="Đà Nẵng, Việt Nam"
-              email="dieu.hien@example.com"
-              phone="+84 123 456 789"
-              languages="Tiếng Việt, Tiếng Anh"
+              email="dieuhiennguyen.2006@gmail.com"
+              phone="+84 989 902 059"
+              languages="Tiếng Việt, Tiếng Hàn"
             />
           </div>
           <div class="col-md-8 mb-4">
             <AboutCard 
               :paragraphs="aboutParagraphs"
-              :skills="aboutSkills"
+              :skills="skills"
             />
           </div>
         </div>

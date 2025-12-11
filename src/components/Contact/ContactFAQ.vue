@@ -1,7 +1,7 @@
 <template>
   <section class="bg-light py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+      <h2 class="text-center mb-5">Câu hỏi thường gặp</h2>
       <div class="row">
         <div class="col-md-8 mx-auto">
           <div class="accordion" id="faqAccordion">

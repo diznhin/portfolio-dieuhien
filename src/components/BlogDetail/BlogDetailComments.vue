@@ -5,13 +5,13 @@
     <!-- Comment Form -->
     <div class="card mb-4">
       <div class="card-body">
-        <h5 class="card-title">Leave a Comment</h5>
+        <h5 class="card-title">Để lại bình luận</h5>
         <form @submit.prevent="submitComment">
           <div class="mb-3">
             <input 
               type="text" 
               class="form-control" 
-              placeholder="Your Name"
+              placeholder="Nhập tên của bạn"
               v-model="commentForm.name"
               required
             >
@@ -20,7 +20,7 @@
             <input 
               type="email" 
               class="form-control" 
-              placeholder="Your Email"
+              placeholder="Nhập Mail của bạn..."
               v-model="commentForm.email"
               required
             >
@@ -29,12 +29,12 @@
             <textarea 
               class="form-control" 
               rows="4" 
-              placeholder="Your Comment"
+              placeholder="Để lại bình luận"
               v-model="commentForm.content"
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-main-green">Submit Comment</button>
+          <button type="submit" class="btn btn-main-green">Gửi</button>
         </form>
       </div>
     </div>
@@ -94,7 +94,7 @@ const submitComment = () => {
     content: ''
   }
   
-  alert('Comment submitted successfully!')
+  alert('Gửi mail thành công!')
 }
 </script>
 

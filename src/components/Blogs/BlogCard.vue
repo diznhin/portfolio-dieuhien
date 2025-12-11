@@ -5,7 +5,7 @@
       
       <div class="mb-2">
         <span class="badge skill-badge me-1">{{ post.category }}</span>
-        <small class="text-muted">{{ post.readTime }} min read</small>
+        <small class="text-muted">{{ post.readTime }} phút để đọc</small>
       </div>
 
       <h5 class="card-title">{{ post.title }}</h5>
@@ -17,12 +17,12 @@
             <i class="bi bi-calendar me-1"></i>{{ post.date }}
           </small>
           <small class="text-muted">
-            <i class="bi bi-eye me-1"></i>{{ post.views }} views
+            <i class="bi bi-eye me-1"></i>{{ post.views }} người xem
           </small>
         </div>
 
         <router-link :to="'/blog/' + post.id" class="btn btn-main-green">
-          Read More
+          Đọc thêm
         </router-link>
       </div>
 

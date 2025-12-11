@@ -5,11 +5,11 @@
         <div class="col-lg-8 mx-auto">
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title text-center mb-4">Send Me a Message</h3>
+              <h3 class="card-title text-center mb-4">Gửi Tin Nhắn</h3>
               <form @submit.prevent="$emit('submit')">
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="name" class="form-label">Name *</label>
+                    <label for="name" class="form-label">Họ và tên *</label>
                     <input 
                       type="text" 
                       class="form-control" 
@@ -38,17 +38,17 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="phone" class="form-label">Phone</label>
+                  <label for="phone" class="form-label">Số điện thoại</label>
                   <input 
                     type="tel" 
                     class="form-control" 
                     id="phone"
                     v-model="form.phone"
-                    placeholder="Optional"
+                    placeholder="Tùy chọn"
                   >
                 </div>
                 <div class="mb-3">
-                  <label for="subject" class="form-label">Subject *</label>
+                  <label for="subject" class="form-label">Chủ đề *</label>
                   <select 
                     class="form-select" 
                     id="subject"
@@ -56,18 +56,18 @@
                     :class="{ 'is-invalid': errors.subject }"
                     required
                   >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="project">Project Collaboration</option>
-                    <option value="job">Job Opportunity</option>
-                    <option value="other">Other</option>
+                    <option value="">Chọn chủ đề</option>
+                    <option value="general">Liên hệ chung</option>
+                    <option value="project">Hợp tác dự án</option>
+                    <option value="job">Cơ hội việc làm</option>
+                    <option value="other">Khác</option>
                   </select>
                   <div class="invalid-feedback" v-if="errors.subject">
                     {{ errors.subject }}
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="message" class="form-label">Message *</label>
+                  <label for="message" class="form-label">Tin nhắn *</label>
                   <textarea 
                     class="form-control" 
                     id="message"
@@ -89,7 +89,7 @@
                       v-model="form.newsletter"
                     >
                     <label class="form-check-label" for="newsletter">
-                      I'd like to receive newsletter updates
+                      Tôi muốn nhận thông tin bản tin
                     </label>
                   </div>
                 </div>
@@ -97,10 +97,10 @@
                   <button type="submit" class="btn btn-main-green btn-lg" :disabled="isSubmitting">
                     <span v-if="isSubmitting">
                       <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                      Sending...
+                      Đang gửi...
                     </span>
                     <span v-else>
-                      <i class="bi bi-send me-2"></i>Send Message
+                      <i class="bi bi-send me-2"></i>Gửi tin nhắn
                     </span>
                   </button>
                 </div>
@@ -141,14 +141,3 @@ defineEmits<{
 }>()
 </script>
 
-<style scoped>
-.btn-main-green:hover {
-  background-color: #2d6e3b;
-  border-color: #2d6e3b;
-}
-
-.spinner-border-sm {
-  width: 1rem;
-  height: 1rem;
-}
-</style>

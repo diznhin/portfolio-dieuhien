@@ -1,7 +1,7 @@
 <template>
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Connect With Me</h2>
+      <h2 class="text-center mb-5">Liên hệ</h2>
       <div class="row">
         <div class="col-md-8 mx-auto">
           <div class="d-flex justify-content-center gap-4">

@@ -6,30 +6,21 @@ import AboutCard from "../components/About/AboutCard.vue";
 import GallerySection from "../components/About/GallerySection.vue";
 import TimelineSection from "../components/About/TimelineSection.vue";
 import { ref } from "vue";
+import avatar from "../assets/imgs/2.png";
 
 const aboutParagraphs = [
-  "Tôi là một lập trình viên Front-end với kinh nghiệm phát triển web hiện đại bằng Vue.js, HTML/CSS và Bootstrap.",
-  "Tôi yêu thích tạo ra giao diện trực quan, đẹp mắt và tối ưu trải nghiệm người dùng.",
-  "Tôi thường xuyên học hỏi công nghệ mới và tham gia các dự án nhóm như portfolio, blog cá nhân và bài thi UI."
+  "Tôi là một lập trình viên Front-end với kinh nghiệm xây dựng giao diện web hiện đại bằng Vue.js, HTML/CSS và Bootstrap. Tôi có khả năng chuyển đổi ý tưởng thiết kế thành sản phẩm giao diện hoàn chỉnh, tối ưu về bố cục, tốc độ và khả năng tương tác. Tôi yêu thích việc tạo ra UI trực quan, tinh gọn và đem lại trải nghiệm tự nhiên cho người dùng. Bên cạnh đó, tôi luôn chủ động cập nhật công nghệ mới, rèn luyện kỹ năng qua các dự án thực tế như portfolio cá nhân, blog, website thử nghiệm và các bài thi giao diện để nâng cao tư duy thiết kế và khả năng lập trình."
 ];
 
 const skills = ["Phát triển Web","Thiết kế UI/UX","Lập trình hướng đối tượng","Quản lý dự án / blog cá nhân","Kỹ năng mềm"];
 
 const galleryImages = ref([
-  { url: "https://via.placeholder.com/400x300", title: "Working at Office" },
-  { url: "https://via.placeholder.com/400x300", title: "Team Meeting" },
-  { url: "https://via.placeholder.com/400x300", title: "Conference Presentation" },
-  { url: "https://via.placeholder.com/400x300", title: "Coding Session" },
-  { url: "https://via.placeholder.com/400x300", title: "Team Building" },
-  { url: "https://via.placeholder.com/400x300", title: "Project Launch" }
+  { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZz2qTVEItU4qJP9In51Qj5jyJgDtXjwJTTA&s", title: "Làm việc tại văn phòng" }
 ]);
 
 const timelineEvents = ref([
-  { year: "2020", title: "Started University", description: "Bắt đầu học ĐH Công nghệ – HUST" },
-  { year: "2021", title: "First Internship", description: "Thực tập Frontend Developer (Vue & React)" },
-  { year: "2022", title: "Full-time Job", description: "Làm Full Stack cho dự án khách hàng" },
-  { year: "2023", title: "Graduated", description: "Tốt nghiệp loại Giỏi – tiếp tục làm việc" },
-  { year: "2024", title: "Senior Dev", description: "Leader team 3 dev, phụ trách dự án lớn" }
+  { year: "2024", title: "FPT Polytechnic", description: "Bắt đầu học Cao Đẳng FPT" },
+  { year: "2026", title: "FPT Software", description: "Thực tập làm việc tại FPT Software" }
 ]);
 </script>
 <template>
@@ -41,13 +32,13 @@ const timelineEvents = ref([
         <div class="row">
           <div class="col-md-4 mb-4">
             <PersonalInfoCard
-              avatar="https://scontent.fdad2-1.fna.fbcdn.net/v/t39.30808-6/547184727_122284576856011492_1123146261134047823_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG4fUIDEPJaB1G7w1NOn22mJ9nbgZ_d6Gsn2duBn93oa6bXE-qNyQQGCK6q0MTa2Upq21wFzCqv4agCfWIcr02v&_nc_ohc=GGsGS5keU8kQ7kNvwGqB2KP&_nc_oc=AdkFxZlI7yruudCH9e7FpW9bIm-V80D2u4YvAlG3WrbeMwzJBpGcoX1XW-wWnUzMEmg&_nc_zt=23&_nc_ht=scontent.fdad2-1.fna&_nc_gid=RZ6CP-WUlECimLajNhV9Hg&oh=00_Afis_DE8J97leP77bsfXTIFn8T8IgHaOhUZ1O-N_eY3IwQ&oe=6927635F/300x300"
-              name="Diệu Hiền"
+              :avatar="avatar"
+              name="Nguyễn Bích Diệu Hiền"
               :age="19"
               address="Đà Nẵng, Việt Nam"
-              email="dieu.hien@example.com"
-              phone="+84 123 456 789"
-              languages="Tiếng Việt, Tiếng Anh"
+              email="dieuhiennguyen.2006@gmail.com"
+              phone="+84 989 902 059"
+              languages="Tiếng Việt, Tiếng Hàn"
             />
           </div>
           <div class="col-md-8 mb-4">
@@ -60,9 +51,9 @@ const timelineEvents = ref([
       </div>
     </section>
 
-    <GallerySection title="Photo Gallery" :images="galleryImages" />
+    <GallerySection title="Thư viện hình ảnh" :images="galleryImages" />
 
-    <TimelineSection title="My Journey" :events="timelineEvents" />
+    <TimelineSection title="Hành trình trưởng thành" :events="timelineEvents" />
   </div>
 </template>
 

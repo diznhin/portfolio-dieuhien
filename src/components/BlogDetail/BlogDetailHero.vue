@@ -5,8 +5,8 @@
       <div class="text-center mt-3">
         <span class="badge skill-badge me-2">{{ post.category }}</span>
         <span class="me-3"><i class="bi bi-calendar me-1"></i>{{ post.date }}</span>
-        <span class="me-3"><i class="bi bi-clock me-1"></i>{{ post.readTime }} min read</span>
-        <span><i class="bi bi-eye me-1"></i>{{ post.views }} views</span>
+        <span class="me-3"><i class="bi bi-clock me-1"></i>{{ post.readTime }} phút để đọc</span>
+        <span><i class="bi bi-eye me-1"></i>{{ post.views }} người xem</span>
       </div>
     </div>
   </section>

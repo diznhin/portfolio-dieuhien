@@ -1,7 +1,10 @@
 <template>
   <div class="contact">
     <!-- Hero Section -->
-    <ContactHero title="Contact Me" subtitle="Get in touch for collaborations, projects, or just to say hello!" />
+    <ContactHero 
+      title="Liên hệ" 
+      subtitle="Liên hệ để hợp tác, trao đổi dự án, hoặc chỉ để chào hỏi!" 
+    />
 
     <!-- Contact Information Section -->
     <ContactInfo @show-map="showMap" />
@@ -70,56 +73,50 @@ const isSubmitting = ref(false)
 
 const faqs = ref([
   {
-    question: 'What types of projects do you work on?',
-    answer: 'I work on a variety of web development projects including e-commerce platforms, content management systems, REST APIs, and custom web applications. I\'m comfortable with both frontend and backend development.'
+    question: 'Bạn thường làm các dự án nào?',
+    answer: 'Tôi tham gia nhiều loại dự án phát triển web, bao gồm nền tảng thương mại điện tử, hệ thống quản lý nội dung, REST API và các ứng dụng web tùy chỉnh. Tôi có kinh nghiệm cả frontend và backend.'
   },
   {
-    question: 'What is your typical response time?',
-    answer: 'I typically respond to inquiries within 24-48 hours. For urgent matters, please mention it in your message and I\'ll try to get back to you sooner.'
+    question: 'Thời gian phản hồi trung bình là bao lâu?',
+    answer: 'Tôi thường phản hồi trong vòng 24-48 giờ. Nếu gấp, vui lòng ghi chú trong tin nhắn để tôi có thể trả lời sớm hơn.'
   },
   {
-    question: 'Do you offer freelance services?',
-    answer: 'Yes, I\'m available for freelance projects. Please provide details about your project in the contact form, and I\'ll get back to you with availability and pricing information.'
+    question: 'Bạn có nhận làm freelance không?',
+    answer: 'Có, tôi nhận dự án freelance. Vui lòng cung cấp chi tiết dự án trong form liên hệ, tôi sẽ phản hồi về thời gian và chi phí.'
   },
   {
-    question: 'What technologies do you specialize in?',
-    answer: 'I specialize in Vue.js, React, Node.js, PHP/Laravel, MongoDB, and MySQL. I\'m also experienced with Bootstrap, responsive design, and modern development practices.'
+    question: 'Bạn chuyên về công nghệ nào?',
+    answer: 'Tôi chuyên về Vue.js, React, Node.js, PHP/Laravel, MongoDB và MySQL. Tôi cũng có kinh nghiệm với Bootstrap, thiết kế responsive và các phương pháp phát triển hiện đại.'
   }
 ])
 
 const validateForm = () => {
-  errors.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  }
-
+  errors.value = { name: '', email: '', subject: '', message: '' }
   let isValid = true
 
   if (!form.value.name.trim()) {
-    errors.value.name = 'Name is required'
+    errors.value.name = 'Vui lòng nhập tên'
     isValid = false
   }
 
   if (!form.value.email.trim()) {
-    errors.value.email = 'Email is required'
+    errors.value.email = 'Vui lòng nhập email'
     isValid = false
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) {
-    errors.value.email = 'Please enter a valid email address'
+    errors.value.email = 'Vui lòng nhập địa chỉ email hợp lệ'
     isValid = false
   }
 
   if (!form.value.subject) {
-    errors.value.subject = 'Please select a subject'
+    errors.value.subject = 'Vui lòng chọn chủ đề'
     isValid = false
   }
 
   if (!form.value.message.trim()) {
-    errors.value.message = 'Message is required'
+    errors.value.message = 'Vui lòng nhập tin nhắn'
     isValid = false
   } else if (form.value.message.trim().length < 10) {
-    errors.value.message = 'Message must be at least 10 characters long'
+    errors.value.message = 'Tin nhắn phải ít nhất 10 ký tự'
     isValid = false
   }
 
@@ -127,61 +124,46 @@ const validateForm = () => {
 }
 
 const submitForm = async () => {
-  if (!validateForm()) {
-    return
-  }
+  if (!validateForm()) return
 
   isSubmitting.value = true
 
   try {
     const response = await fetch('http://localhost:5000/api/contact', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form.value)
     })
 
-    // Parse JSON when available, otherwise fall back to plain text
+
     const contentType = response.headers.get('content-type') || ''
     const data = contentType.includes('application/json')
       ? await response.json()
       : { message: await response.text() }
 
-    // Treat any 2xx status as success to avoid false "mất kết nối" alerts
+
     if (response.ok && data?.success !== false) {
+
       const successMessage = data?.message || 'Gửi thành công!'
-      // Show success modal only if Bootstrap is available
+      
       const modalElement = document.getElementById('successModal')
+
       if (modalElement && (window as any).bootstrap?.Modal) {
         const modal = new (window as any).bootstrap.Modal(modalElement)
         modal.show()
       } else {
         alert(successMessage)
       }
-      
-      // Reset form
-      form.value = {
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        newsletter: false
-      }
-      // Ensure user sees feedback even if modal not present
-      if (!modalElement) {
-        alert(successMessage)
-      }
+
+      form.value = { name: '', email: '', phone: '', subject: '', message: '', newsletter: false }
+      if (!modalElement) alert(successMessage)
       return
     }
 
-    // Show validation errors from backend
+
     if (data?.errors) {
       data.errors.forEach((error: { field: keyof FormErrors; message: string }) => {
-        if (error.field in errors.value) {
-          errors.value[error.field] = error.message
-        }
+        if (error.field in errors.value) errors.value[error.field] = error.message
       })
     } else {
       alert(data?.message || 'Đã xảy ra lỗi, vui lòng thử lại!')
@@ -196,13 +178,12 @@ const submitForm = async () => {
 }
 
 const showMap = () => {
-  // Open Google Maps with Hanoi coordinates
-  window.open('https://maps.google.com/?q=Hanoi,Vietnam', '_blank')
+  window.open('https://maps.google.com/?q=DaNang,Vietnam', '_blank')
 }
 
 const socialClick = (platform: string) => {
-  console.log(`Clicked on ${platform}`)
-  // Here you would typically navigate to the actual social media profiles
+  console.log(`Nhấn vào: ${platform}`)
 }
 </script>
+
 
